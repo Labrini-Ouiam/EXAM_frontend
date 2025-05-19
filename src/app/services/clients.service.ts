@@ -15,4 +15,9 @@ export class ClientsService {
   public getClients(): Observable<Client[]> {
     return this.http.get<Client[]>(this.backendHost);
   }
+
+  public addClient(client: { nom: string; email: string }): Observable<Client> {
+    return this.http.post<Client>(this.backendHost, client);
+  }
+
 }
